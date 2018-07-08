@@ -2,34 +2,7 @@
 <%@ page import="java.sql.*" import="databaseconnection.*"  import="bing.*" import="java.io.*" import="java.util.*" import="Crawl.*" import="CT.*"%>
 <%@ page  import="org.jfree.data.general.DefaultPieDataset" %>
 
-<%@ page  import="org.jfree.data.category.DefaultCategoryDataset" %>
 
-<head>
-<style>
-table, th, td {
-  border: 1px solid black;
-}
-th, td {
-    padding: 15px;
-    text-align: left;
-}
-</style>
-</head>
-<h2>Search Results</h2>
-
-<%
-      DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
-
-double 	totdoc=Double.parseDouble(request.getParameter("tot"));
-String 	key=request.getParameter("key");
-
-String[] links=request.getParameterValues("links");
-double rel=links.length;
-Map<Double, String> hm = 
-      new TreeMap<Double, String>(Collections.reverseOrder());
-%>
-
-<%
 String words[]=key.split("\\s+");
 int count=0;
 String link="";
